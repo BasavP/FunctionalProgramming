@@ -15,7 +15,7 @@ public class Functional1 {
     }
 
     private static void printAllCoursesInListAtleast4Chars(List<String> courses) {
-        courses.stream().filter(course->course.length()>4).forEach(System.out::println);
+        courses.stream().filter(course->course.length()>=4).forEach(System.out::println);
 
     }
 
