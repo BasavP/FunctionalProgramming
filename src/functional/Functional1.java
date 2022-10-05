@@ -10,8 +10,20 @@ public class Functional1 {
         /*printAllOddNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));*/
         /*printAllCoursesInList(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));*/
 //        printAllCoursesInListContainingSpring(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));
-        printAllCoursesInListAtleast4Chars(List.of("Azure","Docker","GCP","AWS","SpringBoot","Spring Core"));
+        /* printAllCoursesInListAtleast4Chars(List.of("Azure","Docker","GCP","AWS","SpringBoot","Spring Core"));*/
+//        printSquaresAllEvenNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));
+//        printCubeAllOddNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));
+        printCourseStringLength(List.of("Azure","Docker","GCP","AWS","SpringBoot","Spring Core"));
 
+
+        String name = null;
+
+       try{
+           name.length();
+       }
+       catch (Exception e){
+           System.out.println(e.getMessage());
+       }
     }
 
     private static void printAllCoursesInListAtleast4Chars(List<String> courses) {
@@ -33,6 +45,11 @@ public class Functional1 {
     }
 
 
+    private static void printCourseStringLength(List<String> courses){
+        courses.stream().map(x -> x + "  : " + x.length()).forEach(System.out::println);
+
+    }
+
 
 
     private static void printAllOddNumbersInList(List<Integer> integers) {
@@ -41,6 +58,13 @@ public class Functional1 {
                 .forEach(System.out::println);
     }
 
+
+    private static void printCubeAllOddNumbersInList(List<Integer> integers) {
+        integers.stream()
+                .filter(number -> number %2 !=0 )
+                .map(x->x*x*x)
+                .forEach(System.out::println);
+    }
     private static boolean isEven(int integer){
         return integer%2 ==0 ;
     }
@@ -53,6 +77,20 @@ public class Functional1 {
 
         integers.stream()
                 .filter(number -> number %2 ==0 )
+                .forEach(System.out::println);
+
+
+    }
+
+    private static void printSquaresAllEvenNumbersInList(List<Integer> integers) {
+       /* integers.stream().
+                filter(Functional1::isEven).   //checking whether the element is even using filter
+                forEach(System.out::println); //method reference*/
+
+
+        integers.stream()
+                .filter(number -> number %2 ==0 )
+                .map(x -> x*x)
                 .forEach(System.out::println);
 
 
