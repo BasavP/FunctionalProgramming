@@ -8,9 +8,22 @@ public class Functional1 {
         /*printAllNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));*/
         /*printAllEvenNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));*/
         /*printAllOddNumbersInList(List.of(12,12,13,13,141,14,1214,12445,767));*/
+        /*printAllCoursesInList(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));*/
+//        printAllCoursesInListContainingSpring(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));
+        printAllCoursesInListAtleast4Chars(List.of("Azure","Docker","GCP","AWS","SpringBoot","Spring Core"));
 
-        printAllCoursesInList(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));
-        printAllCoursesInList(List.of("Azure","GCP","AWS","SpringBoot","Spring Core"));
+    }
+
+    private static void printAllCoursesInListAtleast4Chars(List<String> courses) {
+        courses.stream().filter(course->course.length()>4).forEach(System.out::println);
+
+    }
+
+    private static void printAllCoursesInListContainingSpring(List<String> courses) {
+
+
+        courses.stream().filter(course -> course.contains("Spring")).forEach(System.out::println);
+
     }
 
     private static void printAllCoursesInList(List<String> courses) {
@@ -18,6 +31,9 @@ public class Functional1 {
                 .forEach(System.out::println);
 
     }
+
+
+
 
     private static void printAllOddNumbersInList(List<Integer> integers) {
         integers.stream()
