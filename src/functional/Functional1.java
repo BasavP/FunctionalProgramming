@@ -14,9 +14,15 @@ public class Functional1 {
     }
 
     private static void printAllEvenNumbersInList(List<Integer> integers) {
-        integers.stream().
-                filter(Functional1::isEven).   //checking whether the element is even
-                forEach(System.out::println); //method reference
+       /* integers.stream().
+                filter(Functional1::isEven).   //checking whether the element is even using filter
+                forEach(System.out::println); //method reference*/
+
+
+        integers.stream()
+                .filter(number -> number %2 ==0 )
+                .forEach(System.out::println);
+
 
     }
 
